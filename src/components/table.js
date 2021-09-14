@@ -17,6 +17,8 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import axios from 'axios';
 import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
+import { selectSearched } from '../redux/sliceSearch';
 
 
 const headCells = [
@@ -130,7 +132,7 @@ export default function EnhancedTable(props) {
 
     //console.log("these r props for table component", props);
 
-    const { searchTerm } = props;
+    // const { searchTerm } = props;
 
 
     //console.log("table searchTerm value", searchTerm)
@@ -165,18 +167,22 @@ export default function EnhancedTable(props) {
         getData();
     }, [])
 
+    const searchedValue = useSelector(selectSearched);
+
+    console.log("searchedValue redux", searchedValue)
+
     // filtering data from api for search bar
     const filtered = useMemo(() => {
-        if (!searchTerm) {
+        if (!searchedValue) {
             return data;
         }
-        const term = searchTerm.toLowerCase()
+        const term = searchedValue.searchValue.toLowerCase()
 
         return data.filter(({ clientName, clientEmail }) => clientName.toLowerCase().includes(term)
             || clientEmail.toLowerCase().includes(term)
         )
 
-    }, [data, searchTerm])
+    }, [data, searchedValue])
 
     return (
         <div className={classes.root}>
