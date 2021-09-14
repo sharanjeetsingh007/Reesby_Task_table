@@ -15,6 +15,7 @@ import { logout } from '../redux/sliceLogin';
 import { useSelector } from 'react-redux';
 import { selectSearched } from '../redux/sliceSearch';
 
+
 const useStyles = makeStyles((theme) =>
     createStyles({
         search: {

@@ -161,7 +161,6 @@ export default function EnhancedTable(props) {
     }
 
 
-
     // To make component mout on loading
     useEffect(() => {
         getData();

@@ -6,7 +6,6 @@ const reducer = combineReducers({
     user: userReducer,
     search: searchReducer
 })
-
 export const store = configureStore({
     reducer,
 })
