@@ -77,7 +77,7 @@ export default function BasicTextFields() {
                     <div className='login-button'>
                         <Button
                             type='submit'
-                            style={{ width: 300, height: 39, backgroundColor: '#5900B4', color: '#FFFFFF', marginTop: '1px' }}
+                            style={{ width: 300, height: 39, backgroundColor: '#5900B4', color: '#FFFFFF', marginTop: '10px' }}
                             diaplay='flex'>
                             Login In
                         </Button>
