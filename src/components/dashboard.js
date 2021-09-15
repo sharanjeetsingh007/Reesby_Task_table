@@ -77,20 +77,21 @@ function Dashboard() {
         setSearchTerm(searchWord);
     }
 
-    // passing current search input  
+    // passing current search input 
+    // using searched reducer action
     const doSearch = () => {
         dispatch(searched({
             searchValue: searchTerm,
         }));
     }
 
-    // to clear search term on click
+    // to clear search term on click with redux
     const clearSearch = () => {
         setSearchTerm("")
         dispatch(clear());
     }
 
-    // logout button using reduce for logout action
+    // logout button using reducer for logout action
     const handleLogout = (e) => {
         e.preventDefault();
         dispatch(logout());
