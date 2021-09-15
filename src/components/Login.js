@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function BasicTextFields() {
+export default function Login() {
     const classes = useStyles();
 
     const [name, setName] = useState("");
