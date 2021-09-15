@@ -55,6 +55,8 @@ const useStyles = makeStyles((theme) =>
                 },
             },
         },
+
+
     })
 );
 
@@ -95,81 +97,81 @@ function Dashboard() {
     }
 
     return (
-        <div className="App">
-            <div className="wrapper">
-                <div className="container-table">
-                    <div className="head">
-                        <div className="heading-btn">
-                            <h5 className='management'>MANAGEMENT</h5>
-                            <div className="logout"></div>
-                            <Button
-                                onClick={(e) => handleLogout(e)}
-                                style={{ width: '206px', height: '42px' }}
-                                variant="outlined" color="primary" href="#outlined-buttons">
-                                Log out
-                            </Button>
-                        </div>
-                        <div className="head-middle">
-                            <h2>Clients</h2>
-                            <div className="button-collection">
-                                <Button style={{ backgroundColor: '#5900B4', color: '#FFFFFF', fontSize: '15px', fontWeight: '900', width: '206px', height: '42px' }}
-                                    variant="contained"
-                                    className='add-collection-btn'
-                                    startIcon={<AddIcon />}
-                                >
-                                    New Collection
-                                </Button>
-                            </div>
-                        </div>
-                        <div className="head-bottom">
-                            <div className="head-button">
 
-                                {/* search button */}
-                                <div className="search">
-                                    <div className={classes.search}>
-                                        <div className={classes.searchIcon}>
-                                            <SearchIcon />
-                                        </div>
-                                        <InputBase
-                                            placeholder="Search..."
-                                            classes={{
-                                                root: classes.inputRoot,
-                                                input: classes.inputInput,
-                                            }}
-                                            onChange={getSearchTerm}
-                                            value={searchTerm}
-                                        />
-                                    </div>
-                                </div>
-                                <Button onClick={doSearch}
-                                    style={{ backgroundColor: 'white', color: 'black', width: '100px', height: '40px', marginLeft: '20px', marginRight: '20px' }} variant="contained">
-                                    Search
-                                </Button>
-                                <Button onClick={clearSearch}
-                                    style={{ backgroundColor: 'white', color: 'black', width: '100px', height: '40px' }} variant="contained">
-                                    Clear
-                                </Button>
-                            </div>
-
-                            <Button
-                                style={{ backgroundColor: 'transparent', color: '#5900B4', width: '206px', height: '42px', borderColor: '#5900B4', fontSize: '15px', fontWeight: '900' }}
-                                variant="outlined" color="primary"
-                                startIcon={<FilterListIcon />}
-                            >
-                                SHOW FILTER
-                            </Button>
-                        </div>
-                        <div className="table">
-
-                            {/* Table component */}
-                            <EnhancedTable />
-                        </div>
-
+        <div className="wrapper">
+            <div className="container-table">
+                <div className="head">
+                    <div className="heading-btn">
+                        <h5 className='management'>MANAGEMENT</h5>
+                        <div className="logout"></div>
+                        <Button
+                            onClick={(e) => handleLogout(e)}
+                            style={{ width: '206px', height: '42px' }}
+                            variant="outlined" color="primary" href="#outlined-buttons">
+                            Log out
+                        </Button>
                     </div>
-                </div>
+                    <div className="head-middle">
+                        <h2>Clients</h2>
+                        <div className="button-collection">
+                            <Button style={{ backgroundColor: '#5900B4', color: '#FFFFFF', fontSize: '15px', fontWeight: '900', width: '206px', height: '42px' }}
+                                variant="contained"
+                                className='add-collection-btn'
+                                startIcon={<AddIcon />}
+                            >
+                                New Collection
+                            </Button>
+                        </div>
+                    </div>
+                    <div className="head-bottom">
+                        <div className="head-button">
 
+                            {/* search button */}
+                            <div className="search">
+                                <div className={classes.search}>
+                                    <div className={classes.searchIcon}>
+                                        <SearchIcon />
+                                    </div>
+                                    <InputBase
+                                        placeholder="Search..."
+                                        classes={{
+                                            root: classes.inputRoot,
+                                            input: classes.inputInput,
+                                        }}
+                                        onChange={getSearchTerm}
+                                        value={searchTerm}
+                                    />
+                                </div>
+                            </div>
+                            <Button onClick={doSearch}
+                                style={{ backgroundColor: 'white', color: 'black', width: '100px', height: '40px', marginLeft: '20px', marginRight: '20px' }} variant="contained">
+                                Search
+                            </Button>
+                            <Button onClick={clearSearch}
+                                style={{ backgroundColor: 'white', color: 'black', width: '100px', height: '40px' }} variant="contained">
+                                Clear
+                            </Button>
+                        </div>
+
+                        <Button
+                            style={{ backgroundColor: 'transparent', color: '#5900B4', width: '206px', height: '42px', borderColor: '#5900B4', fontSize: '15px', fontWeight: '900' }}
+                            variant="outlined" color="primary"
+                            startIcon={<FilterListIcon />}
+                        >
+                            SHOW FILTER
+                        </Button>
+                    </div>
+                    <div className="table">
+
+                        {/* Table component */}
+                        <EnhancedTable />
+                    </div>
+
+                </div>
             </div>
-        </div >
+
+        </div>
+
     );
 }
 

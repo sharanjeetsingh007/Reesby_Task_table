@@ -1,8 +1,9 @@
-import './App.css';
+//import './App.css';
 import Login from './components/Login'
 import { useSelector } from 'react-redux';
 import { selectUser } from './redux/sliceLogin';
 import Dashboard from './components/dashboard';
+
 
 
 function App() {
@@ -14,7 +15,6 @@ function App() {
     <div className="App">
 
       {user ? <Dashboard /> : <Login />}
-
 
     </div>
   );

@@ -25,6 +25,8 @@ export default function BasicTextFields() {
 
     const dispatch = useDispatch();
 
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -34,12 +36,14 @@ export default function BasicTextFields() {
             password: password,
             loggedIn: true,
         }));
+
     }
 
 
     return (
-        <div className='main'>
 
+
+        <div className='main'>
             <div className='login'>
                 <h2>Login</h2>
 
@@ -69,14 +73,16 @@ export default function BasicTextFields() {
                             onChange={e => { setPassword(e.target.value) }}
                             style={{ width: 600 }} />
                     </div>
+
                     <div className='login-button'>
                         <Button
                             type='submit'
-                            style={{ width: 300, height: 39, backgroundColor: '#5900B4', color: '#FFFFFF', marginTop: '20px' }}
+                            style={{ width: 300, height: 39, backgroundColor: '#5900B4', color: '#FFFFFF', marginTop: '1px' }}
                             diaplay='flex'>
                             Login In
                         </Button>
                     </div>
+
 
                 </form>
             </div>
