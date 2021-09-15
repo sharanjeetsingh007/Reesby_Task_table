@@ -34,7 +34,6 @@ const headCells = [
 function EnhancedTableHead(props) {
     const { onSelectAllClick, numSelected, rowCount } = props;
 
-
     return (
         <TableHead>
             <TableRow style={{ backgroundColor: '#F5F6F8', height: '120px' }}>
@@ -63,8 +62,8 @@ function EnhancedTableHead(props) {
 EnhancedTableHead.propTypes = {
     classes: PropTypes.object.isRequired,
     numSelected: PropTypes.number.isRequired,
-    order: PropTypes.oneOf(['asc', 'desc']).isRequired,
-    orderBy: PropTypes.string.isRequired,
+    // order: PropTypes.oneOf(['asc', 'desc']).isRequired,
+    //orderBy: PropTypes.string.isRequired,
 };
 
 const useToolbarStyles = makeStyles((theme) => ({
@@ -138,10 +137,8 @@ export default function EnhancedTable(props) {
     //console.log("table searchTerm value", searchTerm)
 
     const classes = useStyles();
-    const [order, setOrder] = React.useState('asc');
-    const [orderBy, setOrderBy] = React.useState('calories');
     const [selected, setSelected] = React.useState([]);
-    const [dense, setDense] = React.useState(false);
+
 
 
 
@@ -185,28 +182,23 @@ export default function EnhancedTable(props) {
 
     return (
         <div className={classes.root}>
-
             <Paper className={classes.paper}>
                 <EnhancedTableToolbar numSelected={selected.length} />
                 <TableContainer>
                     <Table
                         className={classes.table}
                         aria-labelledby="tableTitle"
-                        size={dense ? 'small' : 'medium'}
                         aria-label="enhanced table"
                     >
                         <EnhancedTableHead
                             classes={classes}
                             numSelected={selected.length}
-                            order={order}
-                            orderBy={orderBy}
                         />
                         <TableBody>
                             {/* Rendering the data from api */}
                             {filtered
                                 .map((item, index) => {
                                     return (
-
                                         <TableRow
                                             hover
                                             role="checkbox"

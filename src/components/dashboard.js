@@ -12,8 +12,6 @@ import InputBase from '@material-ui/core/InputBase';
 import React from 'react';
 import { useState } from 'react';
 import { logout } from '../redux/sliceLogin';
-import { useSelector } from 'react-redux';
-import { selectSearched } from '../redux/sliceSearch';
 
 
 const useStyles = makeStyles((theme) =>
@@ -66,10 +64,6 @@ function Dashboard() {
     // State to hold search input 
     const [searchTerm, setSearchTerm] = useState("");
 
-    const searchedValue = useSelector(selectSearched);
-
-    //console.log('redux value', searchedValue.searchValue)
-
     const classes = useStyles();
 
     // using action reducer from redux
@@ -94,6 +88,7 @@ function Dashboard() {
         dispatch(clear());
     }
 
+    // logout button using reduce for logout action
     const handleLogout = (e) => {
         e.preventDefault();
         dispatch(logout());
@@ -129,7 +124,7 @@ function Dashboard() {
                         <div className="head-bottom">
                             <div className="head-button">
 
-
+                                {/* search button */}
                                 <div className="search">
                                     <div className={classes.search}>
                                         <div className={classes.searchIcon}>
@@ -166,6 +161,7 @@ function Dashboard() {
                         </div>
                         <div className="table">
 
+                            {/* Table component */}
                             <EnhancedTable />
                         </div>
 

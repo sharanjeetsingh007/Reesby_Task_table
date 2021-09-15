@@ -34,6 +34,11 @@ body {
   align-items: center;
 }
 
+.head-middle  h2{
+  padding: 0;
+  margin: 0;
+}
+
 .button-collection {
   padding-top: 1px;
 }
