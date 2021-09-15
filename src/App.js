@@ -6,7 +6,6 @@ import Dashboard from './components/dashboard';
 
 
 function App() {
-
   const user = useSelector(selectUser);
 
   console.log('redux user Vlaue', user)
