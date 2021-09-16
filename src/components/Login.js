@@ -66,7 +66,6 @@ export default function Login() {
                         <TextField
                             id="standard-basic"
                             label="Username"
-
                             value={name}
                             onChange={e => { setName(e.target.value) }}
                             style={{ width: 600, marginTop: 0 }} />
